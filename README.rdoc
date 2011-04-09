@@ -1,0 +1,28 @@
+= Rack::NewWindow
+
+Will open all external links and non-HTML links in a new window. Simple
+add as Rack middleware:
+
+    use Rack::NewWindow
+
+There are a few options for this middleware:
+
+local_domains::
+  An array of all domains that should be considered local. The request
+  domain is automatically included. This is just in case part of your
+  site is hosted at a 3rd party. Domains comparison is done with
+  include. So foo.com will make www.foo.com local. If the request
+  domain starts with www. that prefix will be stripped off.
+include_non_html::
+  If true (the default) then all non-HTML links will also open in
+  a new window. If a link has no extension it is assumed to be HTML.
+
+In addition if the link has a "local" in the class attribute then it
+will be considered local regardless of domain or extension. This is a
+great way to override special cases.
+
+If the link already has a "target" attribute it will be untouched.
+
+= Credit
+
+This gem was developed by Eric Anderson (http://pixelwareinc.com).

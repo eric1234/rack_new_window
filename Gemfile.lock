@@ -1,0 +1,21 @@
+PATH
+  remote: .
+  specs:
+    rack_new_window (0.0.1)
+      rack
+      rack_replace
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rack (1.2.2)
+    rack_replace (0.0.1)
+      rack
+    rake (0.8.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rack_new_window!
+  rake
