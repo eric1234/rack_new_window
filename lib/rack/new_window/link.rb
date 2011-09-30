@@ -24,7 +24,7 @@ class Rack::NewWindow::Link
   private
 
   def uri
-    @uri ||= URI.parse(@tag.scan(/href\s*=\s*"([^"]+)"/)[0][0]) rescue nil
+    @uri ||= URI.parse(URI.escape(@tag.scan(/href\s*=\s*"([^"]+)"/)[0][0])) rescue nil
   end
 
   def already_targeted?

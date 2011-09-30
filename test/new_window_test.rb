@@ -53,6 +53,11 @@ class NewWindowTest < Test::Unit::TestCase
     assert_equal '<a href="/foo.pdf">Test</a>', @mock.get('http://example.com/').body
   end
 
+  def test_non_encoded
+    link '<a href="/not encoded.pdf">Test</a>'
+    assert_equal '<a target="_blank" href="/not encoded.pdf">Test</a>', @mock.get('http://example.com/').body
+  end
+
   def test_request_domain
     link '<a href="http://example.com/foo">Test</a>'
     assert_equal '<a href="http://example.com/foo">Test</a>', @mock.get('http://example.com/').body
