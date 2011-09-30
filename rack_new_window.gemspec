@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rack'
   s.add_dependency 'rack_replace'
   s.add_development_dependency 'rake'
+  s.add_development_dependency 'ruby-debug'
 
   s.files = Dir['lib/**/*.rb']
   s.extra_rdoc_files << 'README.rdoc'

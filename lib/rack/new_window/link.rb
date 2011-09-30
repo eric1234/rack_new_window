@@ -45,7 +45,7 @@ class Rack::NewWindow::Link
     return true if !uri || !uri.host
     request_domain = Rack::Request.new(env).host
     request_domain = request_domain.split('.', 2).last if
-      request_domain.split('.', 2).first == 'www' 
+      request_domain.split('.', 2).first == 'www'
     (@options[:local_domains] + [request_domain]).any? {|d| uri.host.include?(d)}
   end
 
